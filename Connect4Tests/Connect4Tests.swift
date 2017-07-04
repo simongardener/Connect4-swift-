@@ -20,17 +20,55 @@ class Connect4Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPlayingCounter_ReturnsObject(){
+        XCTAssertNotNil(PlayingCounter(colour: .red))
+    }
+    func testPlayingCounter_ReturnsCounterOfColour() {
+        let myCounter = PlayingCounter(colour: .yellow)
+        XCTAssertEqual(myCounter.colour, .yellow)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testColumn_ReturnsObject(){
+        let myColumn = Column()
+        XCTAssertNotNil(myColumn)
+        XCTAssertEqual(myColumn.counters.count, 0)
+    }
+    
+    func testColumn_CanAddCounter() {
+        var myColumn = Column()
+        myColumn.add(PlayingCounter(colour: .red))
+        XCTAssertEqual(myColumn.counters.count, 1)
+    }
+    func testColumn_CanHoldMax6() {
+        var myColumn = Column()
+        for _ in 1...7 {
+            myColumn.add(PlayingCounter(colour: .red))
         }
+        XCTAssertTrue(myColumn.counters.count == 6)
     }
     
+    func testBoard_InitializesWith7Columns() {
+        let myBoard = Board()
+        XCTAssertEqual(myBoard.columns.count, 7)
+        
+    }
+    
+    func testBoardCounterExistsAtPosition_Returns() {
+        var myBoard = Board()
+        myBoard.columns[4].add(PlayingCounter(colour: .red))
+        myBoard.columns[4].add(PlayingCounter(colour: .yellow))
+        var indexPath = IndexPath(item: 4, section: 5 )
+        XCTAssertTrue(myBoard.counterExists(at: indexPath))
+        indexPath = IndexPath(item: 5, section: 1)
+        XCTAssertFalse(myBoard.counterExists(at: indexPath))
+    }
+    
+    func testCounterAtPosition_IsYellow(){
+        var myBoard = Board()
+        myBoard.columns[4].add(PlayingCounter(colour: .red))
+        myBoard.columns[4].add(PlayingCounter(colour: .yellow))
+        let indexPath = IndexPath(item: 4, section: 4
+        )
+        XCTAssertEqual(myBoard.counter(at: indexPath).colour, .yellow)
+    }
 }

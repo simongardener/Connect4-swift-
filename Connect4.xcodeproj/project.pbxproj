@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F46AB1261F0BF24800F702F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1251F0BF24800F702F8 /* AppDelegate.swift */; };
-		F46AB1281F0BF24800F702F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1271F0BF24800F702F8 /* ViewController.swift */; };
 		F46AB12B1F0BF24800F702F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46AB1291F0BF24800F702F8 /* Main.storyboard */; };
 		F46AB12D1F0BF24800F702F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46AB12C1F0BF24800F702F8 /* Assets.xcassets */; };
 		F46AB1301F0BF24800F702F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46AB12E1F0BF24800F702F8 /* LaunchScreen.storyboard */; };
 		F46AB13B1F0BF24800F702F8 /* Connect4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB13A1F0BF24800F702F8 /* Connect4Tests.swift */; };
+		F46AB1461F0BF2CC00F702F8 /* Connect4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1451F0BF2CC00F702F8 /* Connect4ViewController.swift */; };
+		F46AB1481F0BF34200F702F8 /* Connect4Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1471F0BF34200F702F8 /* Connect4Model.swift */; };
+		F46AB14A1F0BF3C300F702F8 /* ConnectBoardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1491F0BF3C300F702F8 /* ConnectBoardProtocol.swift */; };
+		F46AB14C1F0BF58300F702F8 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB14B1F0BF58300F702F8 /* GamePlay.swift */; };
+		F46AB14E1F0BF5AA00F702F8 /* CoordinateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB14D1F0BF5AA00F702F8 /* CoordinateConverter.swift */; };
+		F46AB1501F0BF5CE00F702F8 /* GameCollectionViewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB14F1F0BF5CE00F702F8 /* GameCollectionViewDataService.swift */; };
+		F46AB1521F0BF60100F702F8 /* PlayerNameTextfieldDelagate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1511F0BF60100F702F8 /* PlayerNameTextfieldDelagate.swift */; };
+		F46AB1541F0BF66400F702F8 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1531F0BF66400F702F8 /* BoardCollectionViewCell.swift */; };
+		F46AB1561F0BF7C000F702F8 /* Connect4ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1551F0BF7C000F702F8 /* Connect4ViewControllerTests.swift */; };
+		F46AB1581F0BF81300F702F8 /* CoordinateConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1571F0BF81300F702F8 /* CoordinateConverterTests.swift */; };
+		F46AB15A1F0BF85F00F702F8 /* GameCollectionViewDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB1591F0BF85F00F702F8 /* GameCollectionViewDataServiceTests.swift */; };
+		F46AB15C1F0BF88300F702F8 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AB15B1F0BF88300F702F8 /* GameTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +39,6 @@
 /* Begin PBXFileReference section */
 		F46AB1221F0BF24800F702F8 /* Connect4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46AB1251F0BF24800F702F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F46AB1271F0BF24800F702F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F46AB12A1F0BF24800F702F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F46AB12C1F0BF24800F702F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F46AB12F1F0BF24800F702F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +46,18 @@
 		F46AB1361F0BF24800F702F8 /* Connect4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Connect4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46AB13A1F0BF24800F702F8 /* Connect4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4Tests.swift; sourceTree = "<group>"; };
 		F46AB13C1F0BF24800F702F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46AB1451F0BF2CC00F702F8 /* Connect4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect4ViewController.swift; sourceTree = "<group>"; };
+		F46AB1471F0BF34200F702F8 /* Connect4Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect4Model.swift; sourceTree = "<group>"; };
+		F46AB1491F0BF3C300F702F8 /* ConnectBoardProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectBoardProtocol.swift; sourceTree = "<group>"; };
+		F46AB14B1F0BF58300F702F8 /* GamePlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
+		F46AB14D1F0BF5AA00F702F8 /* CoordinateConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateConverter.swift; sourceTree = "<group>"; };
+		F46AB14F1F0BF5CE00F702F8 /* GameCollectionViewDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewDataService.swift; sourceTree = "<group>"; };
+		F46AB1511F0BF60100F702F8 /* PlayerNameTextfieldDelagate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerNameTextfieldDelagate.swift; sourceTree = "<group>"; };
+		F46AB1531F0BF66400F702F8 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		F46AB1551F0BF7C000F702F8 /* Connect4ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect4ViewControllerTests.swift; sourceTree = "<group>"; };
+		F46AB1571F0BF81300F702F8 /* CoordinateConverterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateConverterTests.swift; sourceTree = "<group>"; };
+		F46AB1591F0BF85F00F702F8 /* GameCollectionViewDataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewDataServiceTests.swift; sourceTree = "<group>"; };
+		F46AB15B1F0BF88300F702F8 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +99,19 @@
 		F46AB1241F0BF24800F702F8 /* Connect4 */ = {
 			isa = PBXGroup;
 			children = (
-				F46AB1251F0BF24800F702F8 /* AppDelegate.swift */,
-				F46AB1271F0BF24800F702F8 /* ViewController.swift */,
+				F46AB1451F0BF2CC00F702F8 /* Connect4ViewController.swift */,
+				F46AB1471F0BF34200F702F8 /* Connect4Model.swift */,
+				F46AB14B1F0BF58300F702F8 /* GamePlay.swift */,
+				F46AB14D1F0BF5AA00F702F8 /* CoordinateConverter.swift */,
+				F46AB14F1F0BF5CE00F702F8 /* GameCollectionViewDataService.swift */,
+				F46AB1511F0BF60100F702F8 /* PlayerNameTextfieldDelagate.swift */,
+				F46AB1491F0BF3C300F702F8 /* ConnectBoardProtocol.swift */,
+				F46AB1531F0BF66400F702F8 /* BoardCollectionViewCell.swift */,
 				F46AB1291F0BF24800F702F8 /* Main.storyboard */,
 				F46AB12C1F0BF24800F702F8 /* Assets.xcassets */,
 				F46AB12E1F0BF24800F702F8 /* LaunchScreen.storyboard */,
 				F46AB1311F0BF24800F702F8 /* Info.plist */,
+				F46AB1251F0BF24800F702F8 /* AppDelegate.swift */,
 			);
 			path = Connect4;
 			sourceTree = "<group>";
@@ -91,7 +120,11 @@
 			isa = PBXGroup;
 			children = (
 				F46AB13A1F0BF24800F702F8 /* Connect4Tests.swift */,
+				F46AB1551F0BF7C000F702F8 /* Connect4ViewControllerTests.swift */,
+				F46AB1571F0BF81300F702F8 /* CoordinateConverterTests.swift */,
 				F46AB13C1F0BF24800F702F8 /* Info.plist */,
+				F46AB1591F0BF85F00F702F8 /* GameCollectionViewDataServiceTests.swift */,
+				F46AB15B1F0BF88300F702F8 /* GameTests.swift */,
 			);
 			path = Connect4Tests;
 			sourceTree = "<group>";
@@ -201,8 +234,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46AB1281F0BF24800F702F8 /* ViewController.swift in Sources */,
+				F46AB14C1F0BF58300F702F8 /* GamePlay.swift in Sources */,
+				F46AB1461F0BF2CC00F702F8 /* Connect4ViewController.swift in Sources */,
+				F46AB1541F0BF66400F702F8 /* BoardCollectionViewCell.swift in Sources */,
+				F46AB14A1F0BF3C300F702F8 /* ConnectBoardProtocol.swift in Sources */,
+				F46AB1481F0BF34200F702F8 /* Connect4Model.swift in Sources */,
+				F46AB14E1F0BF5AA00F702F8 /* CoordinateConverter.swift in Sources */,
 				F46AB1261F0BF24800F702F8 /* AppDelegate.swift in Sources */,
+				F46AB1521F0BF60100F702F8 /* PlayerNameTextfieldDelagate.swift in Sources */,
+				F46AB1501F0BF5CE00F702F8 /* GameCollectionViewDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46AB1561F0BF7C000F702F8 /* Connect4ViewControllerTests.swift in Sources */,
+				F46AB1581F0BF81300F702F8 /* CoordinateConverterTests.swift in Sources */,
+				F46AB15A1F0BF85F00F702F8 /* GameCollectionViewDataServiceTests.swift in Sources */,
 				F46AB13B1F0BF24800F702F8 /* Connect4Tests.swift in Sources */,
+				F46AB15C1F0BF88300F702F8 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

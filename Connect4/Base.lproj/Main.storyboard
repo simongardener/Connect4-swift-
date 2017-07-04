@@ -1,26 +1,138 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Connect4 View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Connect4VC" id="BYZ-38-t0r" customClass="Connect4ViewController" customModule="Connect4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Player 1" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvY-O3-XOT">
+                                <rect key="frame" x="16" y="28" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.99658330429999997" green="1" blue="0.1198318962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="T7c-xC-q4H"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s2q-Fm-1fM" id="kBv-av-l5z"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press 'Start' to play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5R-3b-IgD">
+                                <rect key="frame" x="12" y="80" width="296" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y12-PA-PBj">
+                                <rect key="frame" x="0.0" y="149" width="320" height="270"/>
+                                <color key="backgroundColor" red="0.80032179729999997" green="0.90838575659999998" blue="0.95535156249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="EM2-Z8-ISD"/>
+                                    <constraint firstAttribute="height" constant="270" id="l5Z-eM-UF3"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nNK-cD-EVR">
+                                    <size key="itemSize" width="45" height="45"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="oDk-o1-4pP" customClass="BoardCollectionViewCell" customModule="Connect4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Connect4SquareEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-1d-asc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="fVS-1d-asc" secondAttribute="trailing" id="h9U-Rf-8XP"/>
+                                            <constraint firstItem="fVS-1d-asc" firstAttribute="top" secondItem="oDk-o1-4pP" secondAttribute="topMargin" id="o9G-p7-I82"/>
+                                            <constraint firstItem="fVS-1d-asc" firstAttribute="leading" secondItem="oDk-o1-4pP" secondAttribute="leadingMargin" id="ovp-aF-LBY"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="fVS-1d-asc" secondAttribute="bottom" id="zUO-6U-BBN"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="fVS-1d-asc" id="hAD-sx-fEo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Player 2" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-Up-fno">
+                                <rect key="frame" x="231" y="28" width="73" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.077703518220000004" blue="0.083907871760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="OlW-QW-NdI"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s2q-Fm-1fM" id="JD4-Bb-THq"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTz-Pa-54t">
+                                <rect key="frame" x="143" y="459" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e5K-hk-BKR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m5R-3b-IgD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HfG-Z5-gi4"/>
+                            <constraint firstItem="xTz-Pa-54t" firstAttribute="top" secondItem="y12-PA-PBj" secondAttribute="bottom" constant="40" id="KTl-n3-e21"/>
+                            <constraint firstItem="y12-PA-PBj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MvA-k4-u1T"/>
+                            <constraint firstItem="IvY-O3-XOT" firstAttribute="baseline" secondItem="W4Y-Up-fno" secondAttribute="baseline" id="SeM-ii-krC"/>
+                            <constraint firstItem="y12-PA-PBj" firstAttribute="top" secondItem="m5R-3b-IgD" secondAttribute="bottom" constant="40" id="U0i-Ym-8OU"/>
+                            <constraint firstItem="m5R-3b-IgD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="YMc-r1-fuS"/>
+                            <constraint firstItem="xTz-Pa-54t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZOd-Md-OjV"/>
+                            <constraint firstItem="IvY-O3-XOT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="axz-r8-l5F"/>
+                            <constraint firstItem="y12-PA-PBj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="b0F-PY-KV8"/>
+                            <constraint firstItem="IvY-O3-XOT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mYA-ed-3z6"/>
+                            <constraint firstItem="W4Y-Up-fno" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IvY-O3-XOT" secondAttribute="trailing" constant="10" id="nJD-B1-0H0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W4Y-Up-fno" secondAttribute="trailing" id="qis-3i-JP3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameStatusLabel" destination="m5R-3b-IgD" id="Dl9-bR-dBw"/>
+                        <outlet property="player1TextField" destination="IvY-O3-XOT" id="afh-CN-HJ7"/>
+                        <outlet property="player2TextField" destination="W4Y-Up-fno" id="jTZ-sA-Kz2"/>
+                        <outlet property="startButton" destination="xTz-Pa-54t" id="ak5-5k-2Ft"/>
+                        <outlet property="theBoard" destination="y12-PA-PBj" id="IxY-dx-sAr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="s2q-Fm-1fM" userLabel="TextFieldDelegate" customClass="PlayerNameTextfieldDelagate" customModule="Connect4" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="44.836956521739133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Connect4SquareEmpty" width="45" height="45"/>
+    </resources>
 </document>
