@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Connect4ViewController: UIViewController, ConnectBoardProtocol  {
+class Connect4ViewController: UIViewController  {
     
     @IBOutlet weak var theBoard: UICollectionView!
     @IBOutlet weak var gameStatusLabel: UILabel!
@@ -47,21 +47,29 @@ class Connect4ViewController: UIViewController, ConnectBoardProtocol  {
         game.startGame()
     }
     
+}
+
+extension Connect4ViewController : ConnectBoardProtocol {
+    
     func setInterfaceForPlaying() {
         startButton.isEnabled = false
         theBoard.isUserInteractionEnabled = true
     }
+    
     func setInterfaceForGameOver() {
         startButton.isEnabled = true
         startButton.setTitle("Play Again", for: .normal)
         theBoard.isUserInteractionEnabled = false
     }
+    
     func updateGameStatusLabel(with message: String) {
         gameStatusLabel.text = message;
     }
+    
     func reloadBoardPosition(indexPath: IndexPath) {
         theBoard.reloadItems(at: [indexPath])
     }
+    
     func reloadBoard() {
         theBoard.reloadData()
     }
