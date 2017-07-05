@@ -16,9 +16,6 @@ class Connect4ViewController: UIViewController  {
     @IBOutlet weak var player1TextField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
-    //    let numberOfColumns = 7
-    //    let maxNumberOfCountersPerColumn = 6
-    
     var game: Connect4Game!
     var dataService : GameCollectionViewDataService!
     
