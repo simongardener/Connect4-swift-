@@ -7,7 +7,7 @@
 //
 
 import XCTest
- @testable import Connect4
+@testable import Connect4
 class CoordinateConverterTests: XCTestCase {
         
         override func setUp() {
@@ -29,7 +29,6 @@ class CoordinateConverterTests: XCTestCase {
             let indexPath2 = IndexPath(item: 1, section: 4)
             XCTAssertEqual(CoordinateConverter.viewPosition(for: position2), indexPath2)
         }
-        
         
         func testModelPosition_ShouldReturnABoardPosition() {
             let indexPath = IndexPath(item: 6, section: 0)

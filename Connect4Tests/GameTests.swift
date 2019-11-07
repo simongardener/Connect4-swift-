@@ -37,12 +37,10 @@ class GameTests: XCTestCase {
     }
     
     func testGenerateNewPosition_ShouldReturnObject() {
-        
         XCTAssertNotNil(sut.generateNewPosition(from: BoardPosition(column: 1, row: 1), inDirection: BoardPosition(column: 1, row: -1) ))
     }
     
     func testGenerateNewPosition_ShouldReturnCorrectPosition() {
-        
         if let x = sut.generateNewPosition(from: BoardPosition(column: 1, row: 1), inDirection: BoardPosition(column: 1, row: -1)) {
             XCTAssertEqual( x.column  , 2)
             XCTAssertEqual(x.row, 0)
@@ -51,16 +49,16 @@ class GameTests: XCTestCase {
     }
     
     func testCountConsecutiveCounters_ShouldReturnCorrectVlaue() {
-        
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         
         XCTAssertEqual(sut.countConsecuticeCountersOf(colour: .red, from: BoardPosition(column: 4, row: 0), inDirection: BoardPosition(column: 0, row: 1)), 2)
-        
         XCTAssertNotEqual(sut.countConsecuticeCountersOf(colour: .red, from: BoardPosition(column: 4, row: 0), inDirection: BoardPosition(column: 0, row: -1)), 2)
     }
+    
     func testWhoGoesFirst_ShouldReturnCounterColourOfYellowOrRed(){
+        
         XCTAssertNotEqual(sut.whoGoesFirst(), CounterColour.gold)
     }
     
@@ -69,6 +67,7 @@ class GameTests: XCTestCase {
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         let result = sut.drillDown(at: IndexPath(item: 4, section: 0))
+        
         XCTAssertEqual(result.column , 4 )
         XCTAssertEqual(result.row, 3)
     }
@@ -77,6 +76,7 @@ class GameTests: XCTestCase {
         sut.gameBoard.columns[4].add(PlayingCounter(colour: .red))
         sut.changeToGoldStar(at: BoardPosition(column: 4, row: 0))
         let counterColour = sut.gameBoard.counter(at: BoardPosition(column: 4, row: 0)).colour
+        
         XCTAssertEqual(counterColour, .gold)
     }
     
@@ -85,18 +85,23 @@ class GameTests: XCTestCase {
         sut.gameBoard.columns[1].add(PlayingCounter(colour: .red))
         sut.gameBoard.columns[2].add(PlayingCounter(colour: .red))
         sut.gameBoard.columns[3].add(PlayingCounter(colour: .red))
+        
         XCTAssertTrue(sut.checkForWin(from: BoardPosition(column: 1, row:0 ), colour: .red))
     }
     
     func testCheckForWin_ShouldReturnFalse(){
         XCTAssertFalse(sut.checkForWin(from: BoardPosition(column: 1, row:0 ), colour: .red))
     }
+    
     func testHandleDraw_ShouldSetTurnsTakenToZero(){
         sut.handleDraw()
+        
         XCTAssertEqual(sut.turnsTaken, 0)
     }
+    
     func testHandleWin_ShouldSetTurnsTakenToZero(){
         sut.handleWin(counter: PlayingCounter(colour: .red))
+        
         XCTAssertEqual(sut.turnsTaken, 0)
     }
 }

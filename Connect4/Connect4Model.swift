@@ -42,12 +42,12 @@ struct BoardPosition {
 
 struct Board {
     var columns = [Column]()
+    
     init() {
         for _ in 1...7 {
             columns.append(Column())
         }
     }
-    
     
     func counterExists(at position: BoardPosition) -> Bool {
         if self.columns[position.column].counters.count > (position.row) {
@@ -64,6 +64,7 @@ struct Board {
     func counter(at position : BoardPosition) -> PlayingCounter {
         return columns[position.column].counters[position.row]
     }
+    
     func counter(at indexPath : IndexPath) -> PlayingCounter{
         let position = CoordinateConverter.modelPosition(for: indexPath)
         return counter(at: position)
@@ -86,6 +87,4 @@ struct Board {
         let position = CoordinateConverter.modelPosition(for: indexPath)
         return counterStatus(at: position)
     }
-    
-    
 }

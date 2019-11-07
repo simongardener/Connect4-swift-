@@ -26,19 +26,21 @@ class Connect4ViewController: UIViewController  {
         setPlayerNames()
         theBoard.isUserInteractionEnabled = false
     }
+    
     fileprivate func setUpDataService() {
         dataService = GameCollectionViewDataService.init(game: game)
         theBoard.delegate = dataService
         theBoard.dataSource = dataService
     }
+    
     fileprivate func setPlayerNames() {
         player2TextField.text = (UserDefaults.standard.array(forKey: "PlayerNames") as! [String]) [1]
         player1TextField.text = (UserDefaults.standard.array(forKey: "PlayerNames") as! [String]) [0]
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     @IBAction func startGame(_ sender: UIButton) {
         game.startGame()
@@ -70,5 +72,4 @@ extension Connect4ViewController : ConnectBoardProtocol {
     func reloadBoard() {
         theBoard.reloadData()
     }
-    
 }

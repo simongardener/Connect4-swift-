@@ -43,6 +43,12 @@
       "idiom" : "iphone",
       "filename" : "Connect4iOSiCon@3.png",
       "scale" : "3x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Connect4iOSIConSpotlight1024.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

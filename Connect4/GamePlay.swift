@@ -75,20 +75,24 @@ class Connect4Game {
             }
         }
     }
+    
     func handleDraw(){
         delegate.updateGameStatusLabel(with: "Its a draw!")
         delegate.setInterfaceForGameOver()
         turnsTaken = 0
     }
+    
     func handleWin(counter: PlayingCounter ) {
         delegate.updateGameStatusLabel(with: "\(getPlayerNames()[counter.colour.rawValue]) wins!")
         delegate.setInterfaceForGameOver()
         turnsTaken = 0
     }
+    
     func refreshBoardWith(counter playingCounter: PlayingCounter, at position: BoardPosition){
         gameBoard.columns[position.column].add(playingCounter);
         delegate.reloadBoardPosition(indexPath: CoordinateConverter.viewPosition(for: position))
     }
+    
     func checkForWin(from position : BoardPosition, colour :CounterColour) -> Bool {
         
         let southWin = (countConsecuticeCountersOf(colour: colour, from: position, inDirection: offset[directions.south.rawValue]) >= 3)
@@ -121,6 +125,7 @@ class Connect4Game {
         }
         return (southWin || eastWestWin || fallingWin || risingWin)
     }
+    
     func countConsecuticeCountersOf(colour: CounterColour, from current: BoardPosition, inDirections1 offset1: BoardPosition, and2 offset2: BoardPosition) -> Int{
         
         return countConsecuticeCountersOf(colour: colour, from: current, inDirection: offset1)
@@ -150,10 +155,12 @@ class Connect4Game {
         changeToGoldStar(at: newPosition)
         highlightWinningCountersOf(colour: colour, from: newPosition, inDirection: offset)
     }
+    
     func changeToGoldStar(at position:BoardPosition){
         gameBoard.columns[position.column].counters[position.row].colour = .gold
         delegate.reloadBoardPosition(indexPath: CoordinateConverter.viewPosition(for: position))
     }
+    
     func generateNewPosition(from current: BoardPosition, inDirection offset: BoardPosition ) -> BoardPosition?{
         let newPosition = BoardPosition(column: current.column + offset.column, row: current.row + offset.row)
         if positionIsValidBoardPosition(newPosition) == true {
@@ -176,6 +183,4 @@ class Connect4Game {
         let newPosition = BoardPosition(column: column, row:gameBoard.columns[column].counters.count)
         return newPosition
     }
-    
-    
 }

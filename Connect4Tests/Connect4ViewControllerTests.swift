@@ -16,7 +16,7 @@ class Connect4ViewControllerTests: XCTestCase {
         super.setUp()
         
         let storyboard = UIStoryboard.init(name:"Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "Connect4VC") as! Connect4ViewController
+        sut = (storyboard.instantiateViewController(withIdentifier: "Connect4VC") as! Connect4ViewController)
         _ = sut.view
     }
     

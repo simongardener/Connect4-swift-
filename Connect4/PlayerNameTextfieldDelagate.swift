@@ -9,8 +9,7 @@
 import UIKit
 
 class PlayerNameTextfieldDelagate: NSObject, UITextFieldDelegate { 
-    
-    
+        
     func textFieldDidEndEditing(_ textField: UITextField) {
         var playerArray = UserDefaults.standard.array(forKey:"PlayerNames") as? [String] ?? ["Mr Yellow", "Mr Red"]
         if textField.text == "" {

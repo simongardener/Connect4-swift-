@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class CoordinateConverter{
     /*!
      @brief converts from viewcontroller indexPath coordinate to space to model logic coordinate space
